@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav class="px-6 py-6 flex justify-between items-center border-b border-gray-200">
-      <a href="{% url 'index' %}" class="text-xl font-semibold">Puddle</a>
+      <a href="{% url 'core:index' %}" class="text-xl font-semibold">Puddle</a>
       <ul class="space-x-6 flex flex-row">
         <li>
           <a href="#" class="text-lg font-semibold hover:text-gray-500">New item</a>
@@ -23,7 +23,7 @@
           <a href="#" class="text-lg font-semibold hover:text-gray-500">Browse</a>
         </li>
         <li>
-          <a href="#"
+          <a href="{% url 'core:signup' %}"
              class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign up</a>
         </li>
         <li>
@@ -52,7 +52,7 @@
             <a href="#" class="text-lg text-teal-500 hover:text-teal-700">About</a>
           </li>
           <li>
-            <a href="{% url 'contact' %}"
+            <a href="{% url 'core:contact' %}"
                class="text-lg text-teal-500 hover:text-teal-700">Contact</a>
           </li>
           <li>
