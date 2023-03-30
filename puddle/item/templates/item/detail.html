@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load humanize %}
 {% block title %}
   {{ item.name }}
 {% endblock title %}
@@ -10,7 +11,7 @@
     <div class="col-span-2 p-6 bg-gray-100 rounded-xl">
       <h1 class="mb-6 text-3xl">{{ item.name }}</h1>
       <p class="text-xl text-gray-500">
-        <strong>Price:</strong> <span>${{ item.price }}</span>
+        <strong>Price:</strong> <span>${{ item.price|floatformat:2|intcomma }}</span>
       </p>
       <p class="text-xl text-gray-500">
         <strong>Seller:</strong> <span>{{ item.created_by.username }}</span>
@@ -33,7 +34,7 @@
             </div>
             <div class="p-6 bg-white rounded-b-xl border-t-2">
               <h2 class="text-2xl">{{ item.name }}</h2>
-              <p class="text-gray-500">Price: ${{ item.price }}</p>
+              <p class="text-gray-500">Price: ${{ item.price|floatformat:2|intcomma }}</p>
             </div>
           </a>
         </div>

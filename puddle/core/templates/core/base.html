@@ -17,12 +17,13 @@
       <a href="{% url 'core:index' %}" class="text-xl font-semibold">Puddle</a>
       <ul class="space-x-6 flex flex-row">
         <li>
-          <a href="#" class="text-lg font-semibold hover:text-gray-500">New item</a>
-        </li>
-        <li>
           <a href="#" class="text-lg font-semibold hover:text-gray-500">Browse</a>
         </li>
         {% if request.user.is_authenticated %}
+          <li>
+            <a href="{% url 'item:new' %}"
+               class="text-lg font-semibold hover:text-gray-500">New item</a>
+          </li>
           <li>
             <a href="#"
                class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
