@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% load humanize %}
+{% block title %}
+  Dashboard
+{% endblock title %}
+{% block content %}
+  <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+    <h2 class="mb-12 text-2xl text-center">My items</h2>
+    <div class="grid grid-cols-3 gap-3">
+      {% for item in items %}
+        <a href="{% url 'item:detail' item.id %}">
+          <div class="border-2 border-gray-400 rounded-xl">
+            <div>
+              <img src="{{ item.image.url }}"
+                   class="rounded-t-xl block h-[50vh] w-full object-cover object-center"
+                   height="100"
+                   width="100"
+                   alt="{{ item.name }}"/>
+            </div>
+            <div class="p-6 bg-white rounded-b-xl border-t-2">
+              <h2 class="text-2xl">{{ item.name }}</h2>
+              <p class="text-gray-500">Price: ${{ item.price|floatformat:2|intcomma }}</p>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
