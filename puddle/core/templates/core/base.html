@@ -17,7 +17,8 @@
       <a href="{% url 'core:index' %}" class="text-xl font-semibold">Puddle</a>
       <ul class="space-x-6 flex flex-row">
         <li>
-          <a href="#" class="text-lg font-semibold hover:text-gray-500">Browse</a>
+          <a href="{% url 'item:items' %}"
+             class="text-lg font-semibold hover:text-gray-500">Browse</a>
         </li>
         {% if request.user.is_authenticated %}
           <li>
